@@ -3,7 +3,7 @@ const { MongoClient } = require('mongodb');
 
 const app = express();
 const port = 3000;
-const mongoUrl = 'mongodb://db:27017'; // Connect to the MongoDB service in Docker
+const mongoUrl = 'mongodb://mongo:27017'; // Connect to the MongoDB service in Docker
 
 app.get('/', async (req, res) => {
   try {

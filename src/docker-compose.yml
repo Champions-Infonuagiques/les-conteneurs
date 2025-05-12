@@ -1,31 +1,37 @@
-version: '3.4'
+version: '3'
 
 services:
   app:
     image: app
     build:
-      context: .
-      dockerfile: ./dockerfile
-    volumes:
-      - app_data:/app/upload
+      context: ./app
+      dockerfile: ./Dockerfile
     ports:
      - "80:80"
 
   backend:
+    image: backend
     build:
       context: ./backend
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
     depends_on:
-      - db
+      - mongo
 
-  db:
-    image: mongodb
+  mongo:
+    image: mongo
     volumes:
       - db_data:/data/db
 
+  mongo-express:
+    image: mongo-express
+    ports:
+      - 8081:8081
+    restart: always
+    depends_on:
+      - mongo
+
 volumes:
-  app_data
-  db_data
+  db_data: 
   
