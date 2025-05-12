@@ -54,4 +54,6 @@ Il est possible d'héberger les images privés
 - [Nexus Repository OSS – Installation](https://www.sonatype.com/products/repository-oss)
 
 ### L'orchestration
-L'orchestration permet de déployer plusieurs conteneurs à la fois, de configurer leur interaction.
+L'orchestration permet de déployer plusieurs conteneurs à la fois et de configurer leur interaction.
+
+![](./doc/images/docker%20-%20orchestration.png)
